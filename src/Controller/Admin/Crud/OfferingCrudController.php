@@ -56,7 +56,7 @@ class OfferingCrudController extends AbstractCrudController
         yield TextField::new('title', '@consulting.admin.offering.title')->setColumns(8);
         // The enum's cases: the record receives the case.
         yield SelectField::new('activity', '@consulting.admin.offering.activity')->setClass(Activity::class)->setChoices($activities)->setColumns(4);
-        yield SlugField::new('slug')->setColumns(6)->hideOnIndex();
+        yield SlugField::new('slug')->setTargetFieldName('title')->setColumns(6)->hideOnIndex();
         yield TextareaField::new('summary', '@consulting.admin.offering.summary')->setRequired(false)->hideOnIndex();
         yield EditorField::new('description', '@consulting.admin.offering.description')->setRequired(false)->hideOnIndex();
         yield TextField::new('audience', '@consulting.admin.offering.audience')->setColumns(6)->setRequired(false)->hideOnIndex();
@@ -65,7 +65,7 @@ class OfferingCrudController extends AbstractCrudController
         yield TextField::new('price', '@consulting.admin.offering.price')->setColumns(4)->setRequired(false)->setHelp('@consulting.admin.offering.price_help');
         yield IntegerField::new('hours', '@consulting.admin.offering.hours')->setColumns(4)->setRequired(false)->hideOnIndex()->setHelp('@consulting.admin.offering.hours_help');
         yield TextField::new('languages', '@consulting.admin.offering.languages')->setColumns(4)->setRequired(false)->hideOnIndex();
-        yield ImageField::new('image', '@consulting.admin.offering.image')->setColumns(6)->hideOnIndex();
+        yield ImageField::new('image', '@consulting.admin.offering.image')->setRequired(false)->setColumns(6)->hideOnIndex();
         yield IntegerField::new('position', '@consulting.admin.offering.position')->setColumns(2);
         yield BooleanField::new('quotable', '@consulting.admin.offering.quotable')->setColumns(3);
         yield BooleanField::new('visible', '@consulting.admin.offering.visible')->setColumns(3);
