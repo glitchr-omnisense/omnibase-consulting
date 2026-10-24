@@ -60,6 +60,7 @@ final class OpenToAdminsTest extends KernelTestCase
     /**
      * @param class-string<AbstractCrudController> $class
      * @param list<string>                         $own
+     * @dataProvider cruds
      */
     #[DataProvider('cruds')]
     public function testAnAdministratorWrites(string $class, array $own, bool $creates): void
@@ -79,6 +80,7 @@ final class OpenToAdminsTest extends KernelTestCase
     /**
      * @param class-string<AbstractCrudController> $class
      * @param list<string>                         $own
+     * @dataProvider cruds
      */
     #[DataProvider('cruds')]
     public function testSomeoneElseIsRefused(string $class, array $own, bool $creates): void
