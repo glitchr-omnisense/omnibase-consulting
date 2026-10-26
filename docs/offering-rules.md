@@ -22,7 +22,7 @@ final class NoPricesRule implements OfferingRuleInterface
 The guard on what French law no. 71-1130 of 31 December 1971 reserves to the
 regulated professions (personalised legal advice, deeds drafted for others)
 was this bundle's `RegulatedActivityGuard` until 2026-10-09. It is now the
-jurist's profile of [omnibase/legal](https://github.com/glitchr-studio/omnibase-legal):
+jurist's profile of [omnibase/legal](https://github.com/glitchr-omnisense/omnibase-legal):
 
 ```yaml
 # config/packages/legal.yaml

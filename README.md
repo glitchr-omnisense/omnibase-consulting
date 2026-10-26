@@ -1,15 +1,15 @@
 # Consulting
 
 An independent professional's services on their own
-[omnibase](https://github.com/glitchr-studio/omnibase) site: what they offer
+[omnibase](https://github.com/glitchr-omnisense/omnibase) site: what they offer
 (`Offering`: a teachers' workshop, a keynote, a training, a consultation -
 who it is for, how it runs, its price as it should be printed), the quote
 request on omnibase's contact form and model (`QuoteRequest`, kept and
 answered in the back office, its notice under the form), and the rules an
 offering keeps that the site or its profession adds (`OfferingRuleInterface`;
 a jurist's guard on what the law reserves to lawyers and notaries is
-[omnibase/legal](https://github.com/glitchr-studio/omnibase-legal)'s). Hours paid in advance
-will be [omnibase/marketplace](https://github.com/glitchr-studio/omnibase-marketplace)
+[omnibase/legal](https://github.com/glitchr-omnisense/omnibase-legal)'s). Hours paid in advance
+will be [omnibase/marketplace](https://github.com/glitchr-omnisense/omnibase-marketplace)
 `Credit`s: the hook is there (`Service\CreditBridge`), nothing more.
 
 ```bash
