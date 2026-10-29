@@ -1,3 +1,8 @@
+---
+title: "Hours paid in advance"
+order: 34
+---
+
 # Hours paid in advance
 
 The plan of the omnibase family gives hours paid in advance to

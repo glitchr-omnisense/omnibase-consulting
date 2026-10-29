@@ -26,10 +26,15 @@ composer require omnibase/consulting:dev-main
 
 ## Documentation
 
+- [Overview](docs/index.md)
 - [Installation and configuration](docs/installation.md)
+- [Concepts](docs/concepts.md)
 - [Offerings and quote requests](docs/offerings-and-quotes.md)
 - [Rules an offering keeps](docs/offering-rules.md)
 - [Hours paid in advance](docs/credits.md)
+- [The back office](docs/back-office.md)
+- [Configuration reference](docs/configuration.md)
+- [Testing](docs/testing.md)
 
 ## Tests
 

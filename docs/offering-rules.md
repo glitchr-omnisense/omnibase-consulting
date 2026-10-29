@@ -1,3 +1,8 @@
+---
+title: "Rules an offering keeps"
+order: 32
+---
+
 # Rules an offering keeps
 
 The bundle refuses nothing by itself: what an offering may say is the site's
