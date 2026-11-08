@@ -52,7 +52,7 @@ The templates extend `layout1.html.twig` (`title`, `description`,
 
 - PHP 8.2 or later;
 - doctrine/orm 2.15 or 3;
-- omnisense/omnibase 3.0 or 4.0, omnibridge/symfony 1.x, omnibase/admin;
+- omnisense/omnibase 3.0, 4.0 or 5.0, omnibridge/symfony 1.x, omnibase/admin;
 - Symfony 6.4, 7 or 8 (config, dependency-injection, form, http-kernel,
   mailer, string, validator);
 - a mailer DSN, and `MAILER_CONTACT` (or `consulting.recipient`) for the
