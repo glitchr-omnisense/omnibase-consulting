@@ -21,7 +21,7 @@ renders a card. JSON-LD: a `Service` per offering, an `OfferCatalog` on
 
 ## The quote request
 
-`Form\Type\QuoteRequestType` is omnibase's `Base\Form\Type\ContactType`
+`Form\Type\QuoteRequestType` is omnibase's `Omnibridge\Symfony\Omnibase\Form\Type\ContactType`
 (name, e-mail, phone, message) with the offering, the organisation, the
 participants, the dates, the place, the budget, and the consent to the
 notice; its model `Form\Model\QuoteRequestModel` extends

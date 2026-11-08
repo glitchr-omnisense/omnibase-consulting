@@ -5,7 +5,7 @@ namespace Base\Consulting\Form\Type;
 use Base\Consulting\Entity\Offering;
 use Base\Consulting\Form\Model\QuoteRequestModel;
 use Base\Consulting\Repository\OfferingRepository;
-use Base\Form\Type\ContactType;
+use Omnibridge\Symfony\Omnibase\Form\Type\ContactType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -14,7 +14,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * The quote request: omnibase's contact form (Base\Form\Type\ContactType:
+ * The quote request: omnibase's contact form (Omnibridge\Symfony\Omnibase\Form\Type\ContactType:
  * name, e-mail, phone, message) with what a quote needs on top - the
  * offering, the organisation, the participants, the dates, the place, the
  * budget - and the notice to accept. Guarded as glitchr/omnibase guards a
