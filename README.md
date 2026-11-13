@@ -13,8 +13,22 @@ will be [omnibase/marketplace](https://github.com/glitchr-omnisense/omnibase-mar
 `Credit`s: the hook is there (`Service\CreditBridge`), nothing more.
 
 ```bash
-composer require omnibase/consulting:dev-main
+composer require omnibase/consulting
 ```
+
+Under Symfony it runs on the core's Symfony host: Composer brings `omnisense/omnibase` 5.1 and
+`omnibridge/symfony` with it; `config/bundles.php` registers the core's bundle before this one
+(see the core's README for the other bundles a site usually adds):
+
+```php
+// config/bundles.php
+Omnibridge\Symfony\Omnibase\BaseBundle::class => ['all' => true],
+Base\Admin\AdminBundle::class => ['all' => true],
+Base\Consulting\ConsultingBundle::class => ['all' => true],
+```
+
+The routes and the mailer are in [docs/installation.md](docs/installation.md); `/services`
+then lists the offerings written in the back office, and `/quote` takes a quote request.
 
 | | |
 |---|---|
