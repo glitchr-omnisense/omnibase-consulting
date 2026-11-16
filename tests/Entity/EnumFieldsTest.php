@@ -6,7 +6,7 @@ use Base\Consulting\Entity\Offering;
 use Base\Consulting\Entity\QuoteRequest;
 use Base\Consulting\Enum\Activity;
 use Base\Consulting\Enum\QuoteStatus;
-use Doctrine\ORM\Mapping as ORM;
+use Base\Mapping as ORM;
 use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\Translation\TranslatableInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;

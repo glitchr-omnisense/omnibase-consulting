@@ -103,7 +103,7 @@ class QuoteRequestCrudController extends AbstractCrudController
         /** @var QuoteRequest $quote */
         $quote = $this->findEntity($entityId);
         $quote->setStatus($status);
-        $this->entityManager->flush();
+        $this->unitOfWork->flush();
         $this->addFlash('success', $this->translator?->trans('admin.quote.flash.'.$status->value, ['name' => $quote->getName()], 'consulting') ?? $status->value);
         $back = (string) $request->headers->get('referer');
 

@@ -6,7 +6,7 @@ use Base\Consulting\Enum\Activity;
 use Base\Consulting\Repository\OfferingRepository;
 use Base\Consulting\Validator\OfferingRules;
 use Base\Database\Attribute\Uploader;
-use Doctrine\ORM\Mapping as ORM;
+use Base\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\String\Slugger\AsciiSlugger;

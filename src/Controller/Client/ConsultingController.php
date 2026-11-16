@@ -9,8 +9,8 @@ use Base\Consulting\Form\Type\QuoteRequestType;
 use Base\Consulting\Repository\OfferingRepository;
 use Base\Consulting\Service\CreditBridge;
 use Base\Consulting\Service\JsonLd;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Base\Contract\UnitOfWork;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Form\FormFactoryInterface;
@@ -66,7 +66,7 @@ class ConsultingController extends AbstractController
     public function quote(
         Request $request,
         FormFactoryInterface $forms,
-        EntityManagerInterface $entityManager,
+        UnitOfWork $unitOfWork,
         MailerInterface $mailer,
         TranslatorInterface $translator,
         #[Autowire('%consulting.recipient%')] string $recipient,
@@ -81,8 +81,8 @@ class ConsultingController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $quote = $model->toQuoteRequest($request->getLocale());
-            $entityManager->persist($quote);
-            $entityManager->flush();
+            $unitOfWork->persist($quote);
+            $unitOfWork->flush();
             $mailer->send((new TemplatedEmail())
                 ->to($recipient)
                 ->replyTo(new Address((string) $model->email, (string) $model->name))

@@ -23,7 +23,7 @@ final class ConsultingExtension extends AbstractExtension
             new TwigFunction('consulting_offerings', function (?int $limit = null): array {
                 try {
                     return $this->offerings->findVisible($limit);
-                } catch (\Doctrine\DBAL\Exception) {
+                } catch (\Base\Database\Exception\TableNotFound|\Doctrine\DBAL\Exception) {
                     return []; // not migrated yet
                 }
             }),

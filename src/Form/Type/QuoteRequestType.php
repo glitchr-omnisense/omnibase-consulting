@@ -5,7 +5,7 @@ namespace Base\Consulting\Form\Type;
 use Base\Consulting\Entity\Offering;
 use Base\Consulting\Form\Model\QuoteRequestModel;
 use Base\Consulting\Repository\OfferingRepository;
-use Omnibridge\Symfony\Omnibase\Form\Type\ContactType;
+use Base\Form\Type\ContactType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -14,7 +14,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * The quote request: omnibase's contact form (Omnibridge\Symfony\Omnibase\Form\Type\ContactType:
+ * The quote request: omnibase's contact form (Base\Form\Type\ContactType:
  * name, e-mail, phone, message) with what a quote needs on top - the
  * offering, the organisation, the participants, the dates, the place, the
  * budget - and the notice to accept. Guarded as glitchr/omnibase guards a
@@ -24,6 +24,10 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class QuoteRequestType extends AbstractType
 {
+    public function __construct(private readonly OfferingRepository $offerings)
+    {
+    }
+
     public function getParent(): string
     {
         return ContactType::class;
@@ -49,7 +53,7 @@ class QuoteRequestType extends AbstractType
                 'class' => Offering::class,
                 'required' => false,
                 'placeholder' => 'quote.fields.offering_none',
-                'query_builder' => static fn (OfferingRepository $r) => $r->createQueryBuilder('o')->where('o.visible = true')->andWhere('o.quotable = true')->orderBy('o.position', 'ASC'),
+                'choices' => $this->offerings->findQuotable(),
                 'choice_label' => 'title',
                 'label' => 'quote.fields.offering', 'translation_domain' => 'consulting',
             ])

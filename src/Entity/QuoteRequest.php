@@ -4,7 +4,7 @@ namespace Base\Consulting\Entity;
 
 use Base\Consulting\Enum\QuoteStatus;
 use Base\Consulting\Repository\QuoteRequestRepository;
-use Doctrine\ORM\Mapping as ORM;
+use Base\Mapping as ORM;
 
 /**
  * A quote asked from the site: for which offering (or none: "something
